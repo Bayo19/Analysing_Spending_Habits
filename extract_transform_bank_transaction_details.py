@@ -17,9 +17,9 @@ def transform(raw_dataset, list_to_read_to):
         e_helper.str_to_float(new_row, 'Debit Amount', 'Balance')
         
         month = e_helper.get_month_from_date(row['Transaction Date'])
-        season = e_helper.get_season_from_month(month)
+        season_of_year = e_helper.get_season_from_month(month)
         
-        e_helper.add_new_key_value(new_row, 'Season', season)
+        e_helper.add_new_key_value(new_row, 'Season', season_of_year)
         list_to_read_to.append(new_row)    
 
 
