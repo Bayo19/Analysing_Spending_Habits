@@ -1,3 +1,5 @@
+import datetime
+
 # transform functions
 
 def delete_column(row, *args):
@@ -16,3 +18,21 @@ def remove_credit_transactions(dataset):
 
 def remove_key_with_empty_value(row, key):
     return {k:v for k,v in row.items() if k != key}
+
+def get_month_from_date(date):
+    dt = datetime.datetime.strptime(date, "%d/%m/%Y")
+    month = dt.strftime('%B')
+    return month
+    
+def get_season_from_month(month): 
+    if month in ['December', 'January', 'February']:
+        return 'Winter'
+    elif month in ['March', 'April', 'May']:
+        return 'Spring'
+    elif month in ['June', 'July', 'August']:
+        return 'Summer'
+    elif month in ['September', 'October', 'November']:
+        return 'Autumn'
+
+def add_new_key_value(row, key, value):
+    row[key] = value
