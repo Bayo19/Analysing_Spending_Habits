@@ -1,5 +1,4 @@
 import csv
-
                 
 def extract(file, list_to_append_to):
     with open(file, 'r') as file_name:
