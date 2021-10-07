@@ -1,0 +1,4 @@
+Things I'm learning during this little project
+    - find . -maxdepth 1 -name '*.filetype' (this helps to find particular files in the present top level directory and no sub-directories)
+
+    - find . -maxdepth 1 -name '*.csv' &&  mv $_ csv_files (moving all relevant csv files into csv_files directory)
