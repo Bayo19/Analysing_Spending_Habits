@@ -38,12 +38,13 @@ def create_purchases_table(con):
                 balance FLOAT(2))'''
     execute_command(con, command)
     
-def create_processed_files(con):
+def create_processed_files_table(con):
     command = '''CREATE TABLE if not exists processed_files(
                 file_id SERIAL NOT NULL,
                 file_name VARCHAR(255) NOT NULL)'''
     execute_command(con, command)
 
+
 create_transaction_description_table(connection)
 create_purchases_table(connection)
-create_processed_files(connection)
+create_processed_files_table(connection)
