@@ -1,2 +1,3 @@
 *.csv
+*.yml
 /bank_project_venv
