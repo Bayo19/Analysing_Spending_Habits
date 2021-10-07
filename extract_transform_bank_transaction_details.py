@@ -22,18 +22,3 @@ def transform(raw_dataset, list_to_read_to):
         list_to_read_to.append(row)    
 
 
-# Tables to make
-# transaction description (id, td_name)
-# purchases- (td_id, amount spent, season, percentage of current balance)
-
-# objective of this task is to find out which places/people have been getting the most of my money and to also observe and do something about my spending habits
-
-# add season to each row so that we can group by season later in sql
-
-# THINGS TO ANALYZE
-
-# .day in week where I spend the most money
-# .season where I spend the most money
-# .average amount of money spent per month over the years
-# .places where I spent the most money
-# .places where I shopped the most

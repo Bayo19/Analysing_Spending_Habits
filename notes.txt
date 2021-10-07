@@ -4,3 +4,24 @@ Things I'm learning during this little project
     - find . -maxdepth 1 -name '*.csv' &&  mv $_ csv_files (moving all relevant csv files into csv_files directory - bash)
 
     -git reset --hard master@{"10 minutes ago"} (reseting git to a specific point in time - git)
+
+
+
+Things to do next in the project
+    # Tables to make - main tables
+    # transaction description (td_id(PK), td_name)
+    # purchases - (purchase_id(PK), td_id(FK), amount spent, season, percentage of current balance)
+    # processed files - (file_id(PK), file_name)
+
+    # objective of this task is to find out which places/people have been getting the most of my money 
+    and to also observe and do something about my spending habits
+
+    # add season to each row so that we can group by season later in sql
+
+    # THINGS TO ANALYZE - create tables by selecting from main tables
+
+    # .day in week where I spend the most money
+    # .season where I spend the most money
+    # .average amount of money spent per month over the years
+    # .places where I spent the most money
+    # .places where I shopped the most
