@@ -12,8 +12,8 @@ def transform(raw_dataset, list_to_read_to):
     dataset_without_credit_transactions = e_helper.remove_credit_transactions(raw_dataset)
     
     for row in dataset_without_credit_transactions:
-        e_helper.delete_column(row, 'Account Number', 'Sort Code', 'Credit Amount')
-        e_helper.str_to_float(row, 'Debit Amount', 'Balance')
+        e_helper.delete_column(row, 'Account Number', 'Credit Amount', 'Sort Code')
+        e_helper.str_to_float(row, 'Balance', 'Debit Amount')
         
         month = e_helper.get_month_from_date(row['Transaction Date'])
         season_of_year = e_helper.get_season_from_month(month)
@@ -21,13 +21,7 @@ def transform(raw_dataset, list_to_read_to):
         e_helper.add_new_key_value(row, 'Season', season_of_year)
         list_to_read_to.append(row)    
 
-extract_result = []
-extract('csv_files/15-16.csv', extract_result)
 
-transform_result = []
-transform(extract_result, transform_result)
-import pprint
-pprint.pprint(transform_result)
 # Tables to make
 # transaction description (id, td_name)
 # purchases- (td_id, amount spent, season, percentage of current balance)
