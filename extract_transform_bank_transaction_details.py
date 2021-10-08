@@ -22,11 +22,4 @@ def transform(raw_dataset, list_to_read_to):
         e_helper.add_new_key_value(row, 'Season', season_of_year)
         list_to_read_to.append(row)    
 
-extract_result = []
-extract('csv_files/15-16.csv', extract_result)
-transform_result = []
-transform(extract_result, transform_result)
 
-import pprint as p
-print(len(transform_result))
-# p.pprint(transform_result[0])
