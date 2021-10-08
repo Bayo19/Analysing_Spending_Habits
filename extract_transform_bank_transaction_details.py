@@ -9,7 +9,8 @@ def extract(file, list_to_append_to):
 
 def transform(raw_dataset, list_to_read_to):
     
-    dataset_without_credit_transactions = e_helper.remove_credit_transactions(raw_dataset)
+    dataset_no_duplicates = e_helper.delete_duplicates(raw_dataset)
+    dataset_without_credit_transactions = e_helper.remove_credit_transactions(dataset_no_duplicates)
     
     for row in dataset_without_credit_transactions:
         e_helper.delete_column(row, 'Account Number', 'Credit Amount', 'Sort Code')
@@ -27,4 +28,5 @@ transform_result = []
 transform(extract_result, transform_result)
 
 import pprint as p
-p.pprint(transform_result[0])
+print(len(transform_result))
+# p.pprint(transform_result[0])

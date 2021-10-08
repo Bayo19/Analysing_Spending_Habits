@@ -33,3 +33,10 @@ def get_season_from_month(month):
 
 def add_new_key_value(row, key, value):
     row[key] = value
+
+def delete_duplicates(arr):
+    result = []
+    for row in arr:
+        if row not in result:
+            result.append(row)
+    return result
