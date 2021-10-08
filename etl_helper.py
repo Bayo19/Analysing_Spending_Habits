@@ -22,13 +22,13 @@ def get_month_from_date(date):
     return month
     
 def get_season_from_month(month): 
-    if month in ['December', 'January', 'February']:
+    if month in {'December', 'January', 'February'}:
         return 'Winter'
-    elif month in ['March', 'April', 'May']:
+    elif month in {'March', 'April', 'May'}:
         return 'Spring'
-    elif month in ['June', 'July', 'August']:
+    elif month in {'June', 'July', 'August'}:
         return 'Summer'
-    elif month in ['September', 'October', 'November']:
+    elif month in {'September', 'October', 'November'}:
         return 'Autumn'
 
 def add_new_key_value(row, key, value):
