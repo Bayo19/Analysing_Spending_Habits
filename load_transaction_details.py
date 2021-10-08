@@ -94,7 +94,7 @@ def insert_into_processed_files_table(con, values):
     
 
 def get_td_id(con, transaction_name):
-    command = f'SELECT td_id FROM transaction_descriptions WHERE td_name = %s'
+    command = 'SELECT td_id FROM transaction_descriptions WHERE td_name = %s'
     cur = con.cursor()
     val = (transaction_name,)
     cur.execute(command,val)
