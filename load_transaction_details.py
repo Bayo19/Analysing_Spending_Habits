@@ -59,15 +59,15 @@ def create_processed_files_table(con):
                 PRIMARY KEY(file_id))'''
     execute_command(con, command)
 
-try:
-    create_database()
-except:
-    pass
+# try:
+#     create_database()
+# except:
+#     pass
 
-connection = create_connection()
-create_transaction_description_table(connection)
-create_purchases_table(connection)
-create_processed_files_table(connection)
+# connection = create_connection()
+# create_transaction_description_table(connection)
+# create_purchases_table(connection)
+# create_processed_files_table(connection)
 
 def insert_into_transaction_description_table(con, values):
     command = '''INSERT INTO transaction_descriptions (td_name)
@@ -102,7 +102,3 @@ def get_td_id(con, transaction_name):
     record = cur.fetchall()
     cur.close()
     return record[0][0]
-
-
-
-

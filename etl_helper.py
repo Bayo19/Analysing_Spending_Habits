@@ -35,8 +35,6 @@ def add_new_key_value(row, key, value):
     row[key] = value
 
 def delete_duplicates(arr):
-    result = []
-    for row in arr:
-        if row not in result:
-            result.append(row)
-    return result
+    unique_result = []
+    [unique_result.append(n) for row in arr if row not in unique_result]
+    return(unique_result)

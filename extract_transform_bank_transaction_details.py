@@ -27,8 +27,9 @@ def transform(raw_dataset, list_to_read_to):
 
 extract_result = []
 extract('csv_files/15-16.csv', extract_result)
-transfprm_result = []
-transform(extract_result, transfprm_result)
+transform_result = []
+transform(extract_result, transform_result)
 
 import pprint
-pprint.pprint(transfprm_result[0])
+pprint.pprint(transform_result[0])
+
