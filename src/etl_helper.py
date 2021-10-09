@@ -1,5 +1,5 @@
 import datetime
-from types import new_class
+import os
 
 # transform functions
 
@@ -52,8 +52,8 @@ def format_date_postgres(date):
     new_date = dt.strftime('%m/%d/%Y')
     return new_date
 
+# file processing functions
 
 def run_pipeline(file_set, filename, fn):
     if filename not in file_set:
         fn(filename)
-
