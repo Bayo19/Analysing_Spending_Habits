@@ -13,6 +13,7 @@ def create_database():
     cur.close()
     con.close()
 
+
 def create_connection():
     conn = psycopg2.connect(
         user='root',
@@ -23,8 +24,10 @@ def create_connection():
     )
     return conn
 
+
 def close_connection(cur):
     cur.close()
+
 
 def execute_command(connection, command, values=None):
     
@@ -33,6 +36,7 @@ def execute_command(connection, command, values=None):
     connection.commit()
     close_connection(cur)
 
+
 def create_transaction_description_table(con):
     command = '''CREATE TABLE if not exists transaction_descriptions(
                 td_id SERIAL,
@@ -40,6 +44,7 @@ def create_transaction_description_table(con):
                 PRIMARY KEY(td_id))'''
                 
     execute_command(con, command)
+
 
 def create_purchases_table(con):
     command = '''CREATE TABLE if not exists purchases(
@@ -52,6 +57,7 @@ def create_purchases_table(con):
                 PRIMARY KEY(purchases_id, td_id, amount_spent, balance),
                 FOREIGN KEY(td_id) REFERENCES transaction_descriptions(td_id))'''
     execute_command(con, command)
+
     
 def create_processed_files_table(con):
     command = '''CREATE TABLE if not exists processed_files(
@@ -59,6 +65,7 @@ def create_processed_files_table(con):
                 file_name VARCHAR(255) UNIQUE NOT NULL,
                 PRIMARY KEY(file_id))'''
     execute_command(con, command)
+
 
 def insert_into_transaction_description_table(con, value):
     command = '''INSERT INTO transaction_descriptions (td_name)
@@ -68,12 +75,14 @@ def insert_into_transaction_description_table(con, value):
     val = (value,)           
     execute_command(con, command, val)
 
+
 def insert_into_purchases_table(con, td_id, amount_spent, season, date, balance):
     command = '''INSERT INTO purchases (td_id, amount_spent, season, date, balance)
                 VALUES (%s, %s, %s, %s, %s)
                 '''
     val = (td_id, amount_spent, season, date, balance)
     execute_command(con, command, val)
+
 
 def insert_into_processed_files_table(con, value):
     command = '''INSERT INTO processed_files (file_name)
@@ -82,6 +91,7 @@ def insert_into_processed_files_table(con, value):
                 DO NOTHING'''
     val = (value,)          
     execute_command(con, command, val)
+
     
 def get_td_id(con, transaction_name):
     command = 'SELECT td_id FROM transaction_descriptions WHERE td_name = %s'
