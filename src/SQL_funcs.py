@@ -101,3 +101,13 @@ def get_td_id(con, transaction_name):
     record = cur.fetchall()
     cur.close()
     return record[0][0]
+
+
+def select_all_file_names(con):
+    command = '''SELECT file_name FROM processed_files'''
+    cur = con.cursor()
+    cur.execute(command)
+    record = cur.fetchall()
+    cur.close()
+    return {i[0] for i in record}
+

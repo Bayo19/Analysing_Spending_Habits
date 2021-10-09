@@ -8,4 +8,3 @@ def grab_file():
     return ['.'+i.replace('\\','/') for i in csv_files_in_dir] # hacky reformatting of filepath
                 
 
-print(grab_file())

@@ -1,5 +1,5 @@
 import extract_transform_bank_transaction_details as extract_transform
-import load_transaction_details as load
+import SQL_funcs as load
 
 def pipeline(file_path):
     extract_result = []
