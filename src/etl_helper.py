@@ -1,4 +1,5 @@
 import datetime
+from types import new_class
 
 # transform functions
 
@@ -38,3 +39,9 @@ def delete_duplicates(arr):
     unique_result = []
     [unique_result.append(row) for row in arr if row not in unique_result]
     return(unique_result)
+
+def format_date_postgres(date): 
+    dt = datetime.datetime.strptime(date, "%d/%m/%Y")
+    new_date = dt.strftime('%m/%d/%Y')
+    return new_date
+
