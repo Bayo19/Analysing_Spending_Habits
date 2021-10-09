@@ -18,6 +18,4 @@ def pipeline(file_path):
        load.insert_into_purchases_table(connection, td_id_foreign_key, row['Debit Amount'], row['Season'], row['Transaction Date'], row['Balance'])
        load.insert_into_processed_files_table(connection, file_path)
 
-    print('file processing complete')
-    
-pipeline('../csv_files/15-16.csv')
+    print(f'{file_path}: processing complete')

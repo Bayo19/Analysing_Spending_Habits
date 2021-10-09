@@ -21,9 +21,3 @@ def transform(raw_dataset, list_to_read_to):
         row['Transaction Date'] = e_helper.format_date_postgres(row['Transaction Date'])
         e_helper.add_new_key_value(row, 'Season', season_of_year)
         list_to_read_to.append(row)
-        
-# e_r = []
-# extract('../csv_files/15-16.csv', e_r)
-# t_r = []
-# transform(e_r, t_r)
-# print(t_r[0])
