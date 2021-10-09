@@ -59,16 +59,6 @@ def create_processed_files_table(con):
                 PRIMARY KEY(file_id))'''
     execute_command(con, command)
 
-# try:
-#     create_database()
-# except:
-#     pass
-
-# connection = create_connection()
-# create_transaction_description_table(connection)
-# create_purchases_table(connection)
-# create_processed_files_table(connection)
-
 def insert_into_transaction_description_table(con, values):
     command = '''INSERT INTO transaction_descriptions (td_name)
                 VALUES (%s)
@@ -83,7 +73,6 @@ def insert_into_purchases_table(con, td_id, amount_spent, season, balance):
                 ON CONFLICT (amount_spent, season, balance)
                 DO NOTHING'''
 
-
 def insert_into_processed_files_table(con, values):
     command = '''INSERT INTO processed_files (file_name)
                 VALUES (%s)
@@ -92,7 +81,6 @@ def insert_into_processed_files_table(con, values):
                 
     execute_command(con, command, values)
     
-
 def get_td_id(con, transaction_name):
     command = 'SELECT td_id FROM transaction_descriptions WHERE td_name = %s'
     cur = con.cursor()
