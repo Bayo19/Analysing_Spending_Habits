@@ -8,6 +8,7 @@ def pipeline(file_path):
     extract_transform.transform(extract_result, transform_result)
     
     connection = load.create_connection()
+    
     load.create_transaction_description_table(connection)
     load.create_purchases_table(connection)
     load.create_processed_files_table(connection)
