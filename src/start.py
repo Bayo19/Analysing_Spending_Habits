@@ -12,9 +12,11 @@ def start():
 
     files_in_dir = grab_files.grab_file()
     
-    # for file in files_in_dir:
-    #     e_helper.run_pipeline(processed_files, file, pipe.pipeline)
+    for file in files_in_dir:
+        e_helper.run_pipeline(processed_files, file, pipe.pipeline)
+    else:
+        print('All files in folder, already processed')
     
-    print(files_in_dir)
+    # print(files_in_dir)
 
 start()

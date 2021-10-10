@@ -10,4 +10,3 @@ def grab_file():
                 csv_files_in_dir.append(os.path.join(root,name))
     return [i.replace('\\','/') for i in csv_files_in_dir] # hacky reformatting of filepath
 
-print(grab_file())
