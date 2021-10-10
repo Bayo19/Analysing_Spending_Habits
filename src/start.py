@@ -8,10 +8,14 @@ import grab_files
 def start():
     connection = sql.create_connection()
     processed_files = sql.select_all_file_names(connection)
-
     files_in_dir = grab_files.grab_file()
     
     for file in files_in_dir:
         e_helper.run_pipeline(processed_files, file, pipe.pipeline)
+    else:
+        cur = connection.cursor()
+        sql.close_connection(cur)
+        print('All files processed')
 
 start()
+
