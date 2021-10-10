@@ -11,8 +11,10 @@ def start():
     processed_files = sql.select_all_file_names(connection)
 
     files_in_dir = grab_files.grab_file()
-
-    for file in files_in_dir:
-        e_helper.run_pipeline(processed_files, file, pipe.pipeline)
+    
+    # for file in files_in_dir:
+    #     e_helper.run_pipeline(processed_files, file, pipe.pipeline)
+    
+    print(files_in_dir)
 
 start()
