@@ -2,7 +2,6 @@ import etl_helper as e_helper
 import pipeline as pipe
 import SQL_funcs as sql
 import sys
-
 sys.path.append("c:\\Users\\Bayo's Computer\\Desktop\\WebsiteFiles\\bank_project\\")
 import grab_files
 
@@ -15,5 +14,4 @@ def start():
     for file in files_in_dir:
         e_helper.run_pipeline(processed_files, file, pipe.pipeline)
 
-    
 start()
