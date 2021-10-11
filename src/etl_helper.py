@@ -5,6 +5,7 @@ import datetime
 def delete_column(row, *args):
     for arg in args:
         del row[arg]
+    return row # may need to remove return
 
       
 def str_to_float(row, *args):
